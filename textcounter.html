@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Char Reader</title>
+
+        <style>
+            .background-color {
+                background-color: rgb(37, 35, 35);
+            }
+            .theme-color {
+                color: rgb(182, 153, 182);
+            }
+            h1 {
+                text-align: center;
+            }
+            #parent {
+                height: 450px;
+                display: grid;
+                grid-template-columns: minmax(70%, 25%) 1fr;
+            }
+            #left-side
+            {
+                color: white;
+                margin: 10px;
+                padding: 15px;
+                border: solid 2px rgb(182, 153, 182);;
+                border-radius: 1%;
+            }
+            #right-side {
+                margin-top: 10px;
+            }
+            textarea {
+                color: white;
+            }
+            button {
+                margin-top: 10px;
+                Width: 80%;
+                height: 60px;
+                border: rgb(160, 103, 160) solid;
+                border-radius: 5%;
+                font-size: 20px;
+            }
+            p {
+                margin: 0;
+                font-size: 20px;
+            }
+        </style>
+
+    </head>
+    <body class="background-color theme-color">
+        <main class="text-color">
+
+            <h1>Enter your text in the field and click the Count button!</h1>
+            
+            <div id="parent">
+                <textarea id="left-side" class="background-color theme-color">Min: 150px / Max: 25%</textarea>
+                <div id="right-side">
+                    <p>Char count: <span id="chars">0</span></p>
+                    <p>Word count: <span id="words">0</span></p>
+                    <p>Alphabet char count: <span id="alphabet">0</span></p>
+                    <p>Digit count: <span id="digits">0</span></p>
+                    <p>Special char count: <span id="specials">0</span></p>
+                    <p>Space count: <span id="spaces">0</span></p>
+                    <p>Double space count: <span id="doublespace">0</span></p>
+                    <!-- <p>New line count: <span id="new-lines"></span></p> -->
+                    <button class="theme-color" onclick="getText();">Count</button>
+                </div>
+            </div>
+        </main>
+        <script src="charreaderfunctions.js"></script>
+    </body>
+</html>
+
