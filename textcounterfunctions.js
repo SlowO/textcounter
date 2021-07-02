@@ -8,8 +8,10 @@ let resultObj = {
     "doublespace": 0
 }
 
-function getText() {
+function update() {
+    
     const value = document.querySelector('textarea').value;
+    
     resultObj.chars = value.length;
 
     const words = value.split(' ');
@@ -37,6 +39,13 @@ function getText() {
             }
           });
     });
+
+    textarea.onkeyup = update;
+	textarea.oninput = function() {
+		textarea.onkeyup = null;
+		update();
+	};
+    
 };
 
 function countNoneSpaceChar(arr) {

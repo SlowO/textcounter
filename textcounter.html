@@ -2,9 +2,27 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Char Reader</title>
+        <title>Text Counter</title>
 
         <style>
+            :root {
+                --title-size: 30px;
+                --title-margin: 10px;
+                --font-size: 20px;
+                --textbox-font-size: 15px;
+                --height: 450px;
+                --padding: 15px;
+            }
+            @media (max-width: 650px){
+                :root {
+                --title-size: 20px;
+                --title-margin: 0;
+                --font-size: 10px;
+                --textbox-font-size: 9px;
+                --height: 400px;
+                --pading: 10px;
+                }
+            }
             .background-color {
                 background-color: rgb(37, 35, 35);
             }
@@ -13,9 +31,11 @@
             }
             h1 {
                 text-align: center;
+                font-size: var(--title-size);
+                margin: var(--title-margin);
             }
             #parent {
-                height: 450px;
+                height: var(--height);
                 display: grid;
                 grid-template-columns: minmax(70%, 25%) 1fr;
             }
@@ -23,7 +43,7 @@
             {
                 color: white;
                 margin: 10px;
-                padding: 15px;
+                padding: var(--padding);
                 border: solid 2px rgb(182, 153, 182);;
                 border-radius: 1%;
             }
@@ -32,18 +52,19 @@
             }
             textarea {
                 color: white;
+                font-size: var(--textbox-font-size);
             }
-            button {
+            /* button {
                 margin-top: 10px;
                 Width: 80%;
                 height: 60px;
                 border: rgb(160, 103, 160) solid;
                 border-radius: 5%;
-                font-size: 20px;
-            }
+                font-size: var(--font-size);
+            } */
             p {
                 margin: 0;
-                font-size: 20px;
+                font-size: var(--font-size);
             }
         </style>
 
@@ -58,17 +79,17 @@
                 <div id="right-side">
                     <p>Char count: <span id="chars">0</span></p>
                     <p>Word count: <span id="words">0</span></p>
-                    <p>Alphabet char count: <span id="alphabet">0</span></p>
+                    <p>Alphabet count: <span id="alphabet">0</span></p>
                     <p>Digit count: <span id="digits">0</span></p>
                     <p>Special char count: <span id="specials">0</span></p>
                     <p>Space count: <span id="spaces">0</span></p>
                     <p>Double space count: <span id="doublespace">0</span></p>
                     <!-- <p>New line count: <span id="new-lines"></span></p> -->
-                    <button class="theme-color" onclick="getText();">Count</button>
+                    <!-- <button class="theme-color" onclick="update();">Count</button> -->
                 </div>
             </div>
         </main>
-        <script src="charreaderfunctions.js"></script>
+        <script src="textcounterfunctions.js"></script>
     </body>
 </html>
 
